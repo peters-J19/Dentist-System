@@ -1,0 +1,46 @@
+  .month-view {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .calendar-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .calendar-row {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .calendar-cell {
+    flex: 1;
+    border: 1px solid #ccc;
+    height: 80px;
+    padding: 6px;
+    text-align: right;
+    font-size: 1.25rem;
+    min-height: 153px;
+    background-color: white;
+    overflow: auto;
+  }
+
+  .calendar-header-row {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #c9f8e7; /* covers date cells scrolling underneath */
+  }
+
+  .calendar-day-of-week {
+    flex: 1;
+    height: 100px;
+    padding: 6px;
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.3rem;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }

@@ -1,0 +1,168 @@
+.calendar-container {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.calendar-container a,
+.calendar-container a:link,
+.calendar-container a:visited,
+.calendar-container a:hover,
+.calendar-container a:focus,
+.calendar-container a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.calendar-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 1400px;
+  margin-right: 20px;
+}
+
+.calendar-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-view {
+  flex: 1;
+  overflow-y: auto;
+  min-height: calc(100vh - [header-height] - [padding]);
+}
+
+.left-buttons,
+.right-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.calendar-btn.today {
+  background-color: #f0f0f0;
+  border: 0.2px solid #ccc;
+  padding: 8px 14px;
+  font-size: 1.5rem;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.calendar-btn.date {
+  background-color: #f0f0f0;
+  border: 0.2px solid #ccc;
+  padding: 8px 14px;
+  font-size: 1.5rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.calendar-btn.new-event {
+  background-color: #f0f0f0;
+  border: 0.2px solid #ccc;
+  padding: 0px 16px;
+  height: 46px;
+  font-size: 2rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-btn.arrow {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 7px 14px;
+  font-size: 1.5rem;
+  height: 46px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.calendar-btn.arrow.arrow-left {
+  border: 0.2px solid #ccc;
+}
+
+.calendar-btn.arrow.arrow-right {
+  border-top: 0.2px solid #ccc;
+  border-bottom: 0.2px solid #ccc;
+  border-right: 0.2px solid #ccc;
+}
+
+.calendar-btn.section {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 8px 14px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: 1px solid #ccc;
+}
+
+.calendar-btn:hover {
+  background-color: #e2e2e2;
+}
+
+.calendar-btn.section.active {
+  background-color: rgb(58, 57, 57);
+  color: white;
+}
+
+/* Fixed logo, matching TransitionPage's end-state size/position exactly */
+.calendar-logo-header {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 248.02px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  user-select: none;
+  pointer-events: none;
+  background: transparent;
+  z-index: 1000;
+}
+
+.calendar-tooth-logo {
+  height: 80px;
+  width: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+.calendar-letters-logo {
+  height: 70px;
+  width: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+.calendar-extra-info {
+  width: 280px; /* Adjust as needed */
+  margin-top: 110px; /* clears the fixed logo header (30px offset + 80px height) */
+  background-color: #f5f5f5;
+  overflow-y: auto;
+  border: 1.5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem; 
+}
+
+.datepicker-container {
+  position: relative;
+  display: inline-block;
+}

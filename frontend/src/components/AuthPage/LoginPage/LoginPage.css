@@ -1,0 +1,86 @@
+.auth-form {
+  width: 700px;
+  max-width: 90%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.input-container.valid input {
+  padding-right: 2rem;
+}
+
+.input-container.invalid input {
+  padding-right: 12.9rem;
+}
+
+.input-container input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.validation-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.validation-icon.valid {
+  color: rgba(0, 128, 0, 0.6); /* subtle green */
+  font-size: 1.2rem;
+  font-style: bold;
+}
+
+.validation-icon.invalid {
+  color: rgba(255, 0, 0, 0.6); /* subtle red */
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:disabled {
+  background-color: #7baef7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  margin-top: 16px;
+  color: red;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

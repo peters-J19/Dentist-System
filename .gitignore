@@ -1,0 +1,9 @@
+# Local tooling
+.claude/
+CLAUDE.md
+
+# Local-only reference screenshots (not part of the app)
+Images-Claude/
+
+# Secrets
+.env

@@ -1,0 +1,238 @@
+  .app-layout {
+    display: flex;
+    height: 100vh;
+    background-color: #c9f8e7;
+  }
+  
+  .sidebar {
+    width: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar.expanded {
+    width: 130px; /* or whatever feels right */
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    outline: none;
+    border-bottom: none;
+  }
+  
+  .sidebar a:focus,
+  .sidebar a:active,
+  .sidebar a:visited {
+    text-decoration: none;
+    outline: none;
+    border-bottom: none;
+  }
+  
+  /* Logo */
+  .logo-box {
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #57C6A1;
+    cursor: pointer;
+  }
+
+  .logo-box.expanded {
+    width: 130px;
+    height: 130px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #57C6A1;
+    cursor: pointer;
+  }
+  
+  .logo-image {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+  }
+
+  .logo-image.expanded {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+  
+  /* Icon container for scaling */
+  .icon-wrapper {
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+  }
+
+  .icon-wrapper.expanded {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 115px;
+  }
+  
+  /* Base icon styles */
+  .icon {
+    color: #3ef3b0;
+    background-color: transparent;
+    transform: scale(0.9);
+    padding: 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 60px;
+    cursor: pointer;
+  }
+  
+  /* Shrink oversized icons */
+  .icon-small {
+    color: #3ef3b0;
+    background-color: transparent;
+    transform: scale(0.7);
+    padding: 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 60px;
+    cursor: pointer;
+  }
+
+  /* FaNotesMedical (Ficha Clinica) has more whitespace baked into its
+     viewBox than the other nav icons, so it still reads smaller than them
+     at .icon-small's shared scale — nudged up on its own, scale only (no
+     position offset, so it holds up at any sidebar/box size). */
+  .icon-ficha {
+    color: #3ef3b0;
+    background-color: transparent;
+    transform: scale(0.85);
+    padding: 12px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 60px;
+    cursor: pointer;
+  }
+
+  .icon.expanded {
+    transform: scale(1.2);
+  }
+
+  .icon-small.expanded {
+    transform: scale(1);
+  }
+
+  .icon-ficha.expanded {
+    transform: scale(1.15);
+  }
+
+  .icon-wrapper:hover {
+    background-color: #363535;
+  }
+
+  .icon.active {
+    color: white;
+  }
+
+  .icon-small.active {
+    color: white;
+  }
+
+  .icon-ficha.active {
+    color: white;
+  }
+
+  .icon-label {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 2px;
+    white-space: normal;
+    line-height: 1.1;
+    padding: 0 4px;
+  }
+  
+  .toggle-btn {
+    margin-top: auto;
+    cursor: pointer;
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .toggle-btn.expanded {
+    margin-top: auto;
+    cursor: pointer;  
+    display: flex;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 115px;
+  }
+
+  .toggle-btn:hover {
+    background-color: #363535;
+  }
+  
+  .toggle-icon {
+    color: #3ef3b0;
+    font-size: 30px;
+  }
+
+  .toggle-icon.expanded {
+    color: #3ef3b0;
+    font-size: 40px;
+  }
+
+  .nav-top {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .nav-bottom {
+    margin-top: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar-content {
+  flex: 1;       
+  margin-left: 70px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+  .sidebar-content.expanded {
+  flex: 1;
+  margin-left: 130px;
+  height: 100vh;
+}

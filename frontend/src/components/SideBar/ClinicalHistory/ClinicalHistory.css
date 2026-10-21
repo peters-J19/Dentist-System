@@ -1,0 +1,451 @@
+/* Page-level layout skeleton for the Ficha Clinica page (component/directory
+   named ClinicalHistory; UI label stays "Ficha Clinica". Rows share the page's full height by flex-grow
+   weight, not fixed pixels, so they rescale with viewport size and sidebar
+   expand/collapse. .odontograma is still a placeholder (the interactive
+   drawing is separate work — see CLAUDE.md), but is now styled like the
+   page's other containers rather than marked with an outline;
+   .placeholder-label is its centered placeholder text. */
+.ClinicalHistory {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #c9f8e7;
+}
+
+.placeholder-label {
+  margin: 0;
+  font-size: 1rem;
+  color: #444;
+}
+
+.search-bar-container {
+  flex: 4;
+  position: relative;
+}
+
+.search-bar-container .search-bar {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 100%;
+}
+
+.search-bar-container .search-bar input {
+  width: 100%;
+  height: 100%;
+  padding: 8px 12px;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.delete-patient-btn {
+  position: absolute;
+  top: 0;
+  right: 1%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #d9534f;
+  color: white;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.delete-patient-btn:hover {
+  background-color: #b52b27;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.search-dropdown li {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  gap: 30px; /* fixed space between the items */
+}
+
+.search-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.search-dropdown li:hover {
+  background-color: #57C6A1;
+  color: white;
+}
+
+.search-dropdown li span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.patient-name,
+.patient-celular,
+.patient-telefono {
+  flex: none;
+}
+
+.clear-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #888;
+  cursor: pointer;
+  z-index: 20;
+  transition: right 0.3s ease;
+}
+
+.clear-icon:hover {
+  color: #444;
+}
+
+.spinner,
+.status-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  z-index: 10;
+}
+
+.spinner {
+  border: 3px solid rgba(0, 128, 0, 0.2); /* light green */
+  border-top: 3px solid green; /* solid green top */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+.status-icon.success {
+  color: green;
+}
+
+.status-icon.error {
+  color: #d9534f; /* red */
+}
+
+.patient-info-container {
+  flex: 12;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 8px;
+}
+
+.info-row {
+  flex: 1;
+  display: flex;
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #f7f7f7;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.55);
+  font-size: 1rem;
+  color: #555;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+.flex-1 {
+  flex: 1.5;
+}
+
+.flex-2 {
+  flex: 2.5;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #444;
+  margin-right: 10px;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.info-value {
+  font-weight: 700;
+  color: #666;
+  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Edad/Visitas have no real <input>, so their empty state is this literal
+   "---" text rather than a placeholder — styled to match the other fields'
+   ::placeholder look instead of the bold/dark filled-in .info-value look. */
+.info-value.info-value-empty {
+  font-weight: 200;
+  color: #000;
+}
+
+.info-input {
+  flex: 1;
+  min-width: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #666;
+  text-align: right;
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-right: 10px;
+}
+
+.info-input::placeholder {
+  font-weight: 200;
+  color: #000;
+}
+
+.info-input::-webkit-calendar-picker-indicator {
+  margin-left: 8px;
+}
+
+/* Wraps every typeable info-input except fecha_nac (date picker). A plain
+   <input> never auto-scrolls into view for its own overflowing text on its
+   own beyond the caret, so this wrapper div holds the actual overflow-x:auto,
+   and field-sizing lets the input grow past the wrapper's width instead of
+   clipping, which is what makes the wrapper scrollable. */
+.info-input-wrap {
+  flex: 1;
+  min-width: 0;
+  padding-right: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+.info-input-wrap .info-input {
+  flex: none;
+  min-width: 100%;
+  margin-right: 0;
+  field-sizing: content;
+}
+
+.notes-billing-container {
+  flex: 11;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  border-radius: 8px;
+}
+
+.notas-pac {
+  flex: 4; /* ~80% width */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 8px 12px;
+  background: #f7f7f7;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.55);
+  font-size: 1rem;
+  color: #555;
+  box-sizing: border-box;
+}
+
+.notas-pac .info-label {
+  margin-bottom: 6px;
+}
+
+.notas-pac-input {
+  flex: 1;
+  min-width: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #666;
+  text-align: left;
+  border: none;
+  background: transparent;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+}
+
+.notas-pac-input::placeholder {
+  font-weight: 200;
+  color: #000;
+}
+
+.cobros-saldo {
+  flex: 1; /* ~20% width */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cobros-saldo .info-item {
+  flex: 1;
+}
+
+.red-text {
+  color: #d9534f;
+}
+
+.green-text {
+  color: #5cb85c;
+}
+
+.odontograma-container {
+  flex: 69;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  border-radius: 8px;
+}
+
+.odontograma {
+  flex: 7; /* ~70% width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f7;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.55);
+  box-sizing: border-box;
+}
+
+.odontograma-notes {
+  flex: 3; /* ~30% width */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 8px 12px;
+  background: #f7f7f7;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.55);
+  font-size: 1rem;
+  color: #555;
+  box-sizing: border-box;
+}
+
+.observaciones-title {
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: underline;
+  color: #444;
+  user-select: none;
+}
+
+.observaciones-input {
+  flex: 1;
+  min-width: 0;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #666;
+  text-align: left;
+  border: none;
+  background: transparent;
+  outline: none;
+  resize: none;
+  overflow-y: auto;
+}
+
+.observaciones-input::placeholder {
+  font-weight: 200;
+  color: #000;
+}
+
+.action-buttons-container {
+  flex: 4;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border-radius: 8px;
+}
+
+.guardar-btn,
+.cancelar-btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.guardar-btn {
+  background-color: #5cb85c;
+}
+
+.guardar-btn:hover {
+  background-color: #449d44;
+}
+
+.cancelar-btn {
+  background-color: #888888;
+}
+
+.cancelar-btn:hover {
+  background-color: #666666;
+}

@@ -1,0 +1,117 @@
+.transition-page {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #c9f8e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  z-index: 10000;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Container 1: Letters sliding in animation */
+.transition-logo-container-1 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  user-select: none;
+  z-index: 10000;
+
+  width: auto;
+  height: auto;
+
+  opacity: 1; /* start invisible */
+  transition: opacity 0.2s ease;
+}
+
+.transition-logo-container-1.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Letters reveal wrapper */
+.letters-wrapper {
+  width: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: width 3s ease;
+  margin-left: 5px;
+  height: 315px;
+}
+
+.letters-in .letters-wrapper {
+  width: 758.95px; /* reveal full letters */
+}
+
+.transition-tooth {
+  height: 360px;
+  width: auto;
+  user-select: none;
+  pointer-events: none;
+  transition: height 2s ease;
+}
+
+.transition-letters {
+  height: 315px;
+  width: auto;
+  user-select: none;
+  pointer-events: none;
+  margin-left: 5px;
+  transition: height 2s ease;
+}
+
+.letters-in .transition-letters {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Container 2: Shrink and move animation */
+.transition-logo-container-2 {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 248.02px;  /* final container width */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: 3px;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.transition-logo-container-2.shrink-move {
+  opacity: 1;
+}
+
+.transition-logo-container-2 .transition-tooth.small {
+  height: 80px;
+  width: auto;
+  pointer-events: none;
+  user-select: none;
+  transition: none;
+}
+
+.transition-logo-container-2 .transition-letters.small {
+  height: 70px;
+  width: auto;
+  margin-left: 5px;
+  pointer-events: none;
+  user-select: none;
+  transition: none;
+}

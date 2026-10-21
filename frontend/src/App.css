@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full screen height */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  color: #333; /* Dark text */
+}
