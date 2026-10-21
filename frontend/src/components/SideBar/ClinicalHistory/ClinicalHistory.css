@@ -2,7 +2,7 @@
    named ClinicalHistory; UI label stays "Ficha Clinica". Rows share the page's full height by flex-grow
    weight, not fixed pixels, so they rescale with viewport size and sidebar
    expand/collapse. .odontograma is still a placeholder (the interactive
-   drawing is separate work — see CLAUDE.md), but is now styled like the
+   drawing is separate work), but is now styled like the
    page's other containers rather than marked with an outline;
    .placeholder-label is its centered placeholder text. */
 .ClinicalHistory {

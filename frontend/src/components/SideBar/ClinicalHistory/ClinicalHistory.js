@@ -9,8 +9,7 @@
 // state only for now — there's no odontogramas table/route yet, so it
 // isn't populated or cleared on patient search. The odontograma drawing
 // itself is still a labeled placeholder box, and the bottom
-// Guardar/Cancelar buttons are visual-only with no click handlers — see
-// Step 1 of the Restructuring tasks in CLAUDE.md.
+// Guardar/Cancelar buttons are visual-only with no click handlers yet.
 import React, { useState, useRef, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';

@@ -1,5 +1,5 @@
 // Patient-appointments page — renamed from the old ViewPatient placeholder.
-// Not built yet — see Step 3 of the Restructuring tasks in CLAUDE.md.
+// Not built yet.
 import React from 'react';
 import './Appointments.css';
 
