@@ -18,7 +18,7 @@ A practice management app I'm designing and building on my own for a friend who 
 - **Calendar.** Organizes the practice's appointments in month, week and agenda views.
 - **Patient record (Ficha Clínica).** Search for a patient and manage everything the practice needs in one place: personal and contact details, notes, billing totals and balance, and an odontogram (tooth chart), with changes saved to the database. Age is calculated from the date of birth instead of being stored.
 - **Appointments (Citas).** Schedule appointments and search them by date.
-- **New patients.** Add patients to the system.
+- **Add patient.** A standalone form for creating patients, which is being merged into the patient record page so adding and editing happen in one place.
 
 ## How it's built
 
