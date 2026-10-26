@@ -2,7 +2,7 @@
 
 A practice management app I'm building for a friend who runs a dental practice. Their patient records, appointments and billing notes currently live on paper, and the goal is to move them into a clear, easy-to-use interface that the whole practice can rely on. The interface is in Spanish.
 
-**Status: about halfway through.** The login, calendar and patient record screens are in place; the odontogram, appointments and settings are still to come (details below).
+**Status:** still under construction, roughly halfway. The appointments page is next.
 
 <table>
   <tr>
@@ -12,21 +12,13 @@ A practice management app I'm building for a friend who runs a dental practice. 
   </tr>
 </table>
 
-## What's built
+## What it does
 
-- **Login.** Authentication through Supabase Auth. Every page behind the login redirects back to it when there's no session, and an already signed-in user skips the login form.
-- **Calendar.** A month view with Today, previous and next controls and a Week / Month / Agenda switcher.
-- **Patient record (Ficha Clínica).** Search for a patient, load their full record, and edit their personal details, contact information and notes in place. Age is calculated from the date of birth instead of being stored, and billing totals and balance are shown alongside.
-- **New patients.** A form to add a patient through the API.
-- **Navigation.** A collapsible sidebar shared by every page.
-
-## What's next
-
-- Saving changes from the patient record page, and deleting patients
-- An interactive **odontogram**, the tooth chart each patient's dental history is recorded on
-- **Appointments (Citas):** scheduling, search by date, and appointment blocks on the calendar
-- Week and agenda calendar views
-- A settings page
+- **Login.** Staff sign in through Supabase Auth, and every page redirects to the login screen when there's no active session.
+- **Calendar.** Organizes the practice's appointments in month, week and agenda views.
+- **Patient record (Ficha Clínica).** Search for a patient and manage everything the practice needs in one place: personal and contact details, notes, billing totals and balance, and an odontogram (tooth chart), with changes saved to the database. Age is calculated from the date of birth instead of being stored.
+- **Appointments (Citas).** Schedule appointments and search them by date.
+- **New patients.** Add patients to the system.
 
 ## How it's built
 
@@ -37,4 +29,4 @@ React frontend and Express API, both backed by the same Supabase PostgreSQL data
 
 **Tech:** React 19, React Router 7, Supabase (Auth and PostgreSQL), Express 5, Node.js, `pg`.
 
-This is a private project for the practice, so it isn't deployed and isn't meant to be run by others. The repo is here to show the code.
+Built for the practice's private use, so it isn't publicly deployed. The repo is here to showcase the code.
