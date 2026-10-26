@@ -27,7 +27,6 @@ A practice management app I'm building for a friend who runs a dental practice. 
 - **Appointments (Citas):** scheduling, search by date, and appointment blocks on the calendar
 - Week and agenda calendar views
 - A settings page
-- **Securing the API** before it handles real patient data. Right now login protects the pages in the app, but the API itself doesn't check who is calling it yet. The plan is to verify the Supabase session on the backend and add row-level security in the database.
 
 ## How it's built
 
