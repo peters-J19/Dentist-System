@@ -34,8 +34,7 @@ A practice management app I'm building for a friend who runs a dental practice. 
 React frontend and Express API, both backed by the same Supabase PostgreSQL database.
 
 - **Two data paths.** The frontend talks to Supabase directly for authentication, and to the Express API for patient data, which runs parameterized SQL through `pg`.
-- **One shared patient list.** The list is fetched once when the app loads and passed to every page through React Router's outlet context, so pages don't refetch it.
-- **Dates stay as dates.** Postgres `date` columns come back as plain `YYYY-MM-DD` strings. By default, the `pg` driver converts them to JavaScript dates in the server's local time zone, which shifted birth dates by a day depending on where the backend was running.
+- **A light list for search, full records on demand.** The app loads a minimal patient list (ID, name and phone numbers) to power the search box, and shares it with every page through React Router's outlet context. A patient's full record is only fetched when you select them, and newly added patients are added to the list without reloading it. This keeps the app responsive as the number of patients grows.
 
 **Tech:** React 19, React Router 7, Supabase (Auth and PostgreSQL), Express 5, Node.js, `pg`.
 
