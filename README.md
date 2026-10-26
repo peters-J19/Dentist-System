@@ -1,6 +1,6 @@
 # Dentist System
 
-A practice management app I'm building for a friend who runs a dental practice. Their patient records, appointments and billing notes currently live on paper, and the goal is to move them into a clear, easy-to-use interface that the whole practice can rely on. The interface is in Spanish.
+A practice management app I'm designing and building on my own for a friend who runs a dental practice. Their patient records, appointments and billing notes currently live on paper, and the goal is to move them into a clear, easy-to-use interface that the whole practice can rely on. The interface is in Spanish.
 
 **Status:** still under construction, roughly halfway. The appointments page is next.
 
